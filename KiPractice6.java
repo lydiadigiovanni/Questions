@@ -1,4 +1,4 @@
-//Purpose: First round of practice questions for Geometry Coast
+//Purpose: Second round of practice questions for Geometry Coast
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
