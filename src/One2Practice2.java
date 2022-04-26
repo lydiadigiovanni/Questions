@@ -82,5 +82,23 @@ public class One2Practice2 extends Assessment {
         return questionTwo;
         
     }
+
+    @Override
+    public String[][] generateMultipleChoiceQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String[][] generateTrueFalseQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String[][] generateUserInputQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
 
