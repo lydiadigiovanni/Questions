@@ -2,6 +2,23 @@
 import java.util.Random;
 
 public class One2Practice1 extends Assessment {
+    @Override
+    public String[][] generateMultipleChoiceQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String[][] generateTrueFalseQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String[][] generateUserInputQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
     public static void main(String[] args) {
           //Test question one
           One2Practice1 test1 = new One2Practice1();
@@ -73,23 +90,5 @@ public class One2Practice1 extends Assessment {
 
         return questionTwo;
         
-    }
-
-    @Override
-    public String[][] generateMultipleChoiceQuestion() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[][] generateTrueFalseQuestion() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[][] generateUserInputQuestion() {
-        // TODO Auto-generated method stub
-        return null;
     }
 }
