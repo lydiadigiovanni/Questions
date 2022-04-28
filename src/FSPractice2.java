@@ -1,10 +1,40 @@
 //Purpose: Second round of practice questions for Operation Beach
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class One2Practice2 extends Assessment {
+public class FSPractice2 extends Assessment {
+
+    @Override
+    public String[][] generateMultipleChoiceQuestion() {
+        String[][] multipleChoice = new String[2][1];
+        int i = ThreadLocalRandom.current().nextInt(4);
+        switch (i) {
+            case 0:
+                multipleChoice[0] = new String[]{"0"};
+                multipleChoice[1] = generateQuestionOne();
+                break;
+            case 1: 
+                multipleChoice[0] = new String[]{"1"};
+                multipleChoice[1] = generateQuestionTwo();
+                break;
+        }
+        return multipleChoice;
+    }
+
+    @Override
+    public String[][] generateTrueFalseQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String[][] generateUserInputQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
     public static void main(String[] args) {
         //Test question one
-        One2Practice2 test1 = new One2Practice2();
+        FSPractice2 test1 = new FSPractice2();
         String[] question1 = test1.generateQuestionOne();
         System.out.println(question1[0]);
         System.out.println(question1[1]); 
@@ -12,7 +42,7 @@ public class One2Practice2 extends Assessment {
         System.out.println(question1[3]); 
         System.out.println(question1[4]); 
         //Test question two
-        One2Practice2 test2 = new One2Practice2();
+        FSPractice2 test2 = new FSPractice2();
         String[] question2 = test2.generateQuestionTwo();
         System.out.println(question2[0]);
         System.out.println(question2[1]); 
@@ -81,24 +111,6 @@ public class One2Practice2 extends Assessment {
 
         return questionTwo;
         
-    }
-
-    @Override
-    public String[][] generateMultipleChoiceQuestion() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[][] generateTrueFalseQuestion() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[][] generateUserInputQuestion() {
-        // TODO Auto-generated method stub
-        return null;
     }
 }
 
