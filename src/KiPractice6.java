@@ -1,10 +1,33 @@
-//Purpose: First round of practice questions for Geometry Coast
+//Purpose: Second round of practice questions for Geometry Coast
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class KiPractice6 extends Assessment {
+    
+    @Override
+    public String[][] generateMultipleChoiceQuestion() {
+        String[][] multipleChoice = new String[2][1];
+        int i = ThreadLocalRandom.current().nextInt(4);
+        switch (i) {
+            case 0:
+                multipleChoice[0] = new String[]{"0"};
+                multipleChoice[1] = generateQuestionOne();
+                break;
+            case 1: 
+                multipleChoice[0] = new String[]{"1"};
+                multipleChoice[1] = generateQuestionTwo();
+                break;
+        }
+        return multipleChoice;
+    }
+
+    @Override
+    public String[][] generateTrueFalseQuestion() {
+        // TODO Auto-generated method stub
+        return null;
+    }
     public static void main(String[] args) {
          //Test question one
          KiPractice6 test1 = new KiPractice6();
@@ -23,18 +46,6 @@ public class KiPractice6 extends Assessment {
          System.out.println(question2[3]); 
          System.out.println(question2[4]);
     }
-    
-    @Override
-    public String[][] generateMultipleChoiceQuestion() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[][] generateTrueFalseQuestion() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     @Override
     public String[][] generateUserInputQuestion() {
@@ -42,7 +53,7 @@ public class KiPractice6 extends Assessment {
         return null;
     }
 
-    //Question One: Which one is a " "? (Shapes are the answer)
+    //Question One: Which one is a " "? (Pics of shapes are the answers)
     private String[] generateQuestionOne() {
         String[] nameOfShapes = {"circle", "rectangle", "oval", "triangle", "diamond"}; //Array of the different names of shapes
         ArrayList<String> shapeNames = new ArrayList<String>(); //Array list will be used to remove the answer from later
@@ -69,7 +80,8 @@ public class KiPractice6 extends Assessment {
         return questionOne;
     }
 
-    //Question Two: Which shape is a "soccer ball, television, watermelon, pizza slice, kite"? Answers are words
+    //Question Two: Which shape is a "soccer ball, television, watermelon, pizza slice, kite"? 
+    //Pics of items are the answers
     private String[] generateQuestionTwo() {
         String[] itemsInQuestions = {"soccer ball", "television", "watermelon", "pizza slice", "kite"}; //Array contains the thing/item in question
         String[] shapeOfItem = {"Circle", "Rectangle", "Oval", "Triangle", "Diamond"}; //Array contains shape that thing is
