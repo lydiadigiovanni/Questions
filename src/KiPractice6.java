@@ -53,7 +53,7 @@ public class KiPractice6 extends Assessment {
         return null;
     }
 
-    //Question One: Which one is a " "? (Shapes are the answer)
+    //Question One: Which one is a " "? (Pics of shapes are the answers)
     private String[] generateQuestionOne() {
         String[] nameOfShapes = {"circle", "rectangle", "oval", "triangle", "diamond"}; //Array of the different names of shapes
         ArrayList<String> shapeNames = new ArrayList<String>(); //Array list will be used to remove the answer from later
@@ -80,7 +80,8 @@ public class KiPractice6 extends Assessment {
         return questionOne;
     }
 
-    //Question Two: Which shape is a "soccer ball, television, watermelon, pizza slice, kite"? Answers are words
+    //Question Two: Which shape is a "soccer ball, television, watermelon, pizza slice, kite"? 
+    //Pics of items are the answers
     private String[] generateQuestionTwo() {
         String[] itemsInQuestions = {"soccer ball", "television", "watermelon", "pizza slice", "kite"}; //Array contains the thing/item in question
         String[] shapeOfItem = {"Circle", "Rectangle", "Oval", "Triangle", "Diamond"}; //Array contains shape that thing is

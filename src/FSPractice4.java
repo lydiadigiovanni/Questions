@@ -52,7 +52,7 @@ public class FSPractice4 extends Assessment {
                 System.out.println(question2[4]);
     }
 
-    //What time does the clock show? Show random clock
+    //What time does the clock show? Picture of random clock next to question
     private String[] generateQuestionOne() {
                 //String array holds the names of pics to be used in the questions
                 String[] clocks = {"One", "Two", "Two Ten", "Two Thirty", "Three Fifty", "Four Thirty Five", "Five Twenty",
@@ -255,7 +255,7 @@ public class FSPractice4 extends Assessment {
         
     }
 
-    //Which clock shows "random time"?
+    //Which clock shows "random time"? //Pics of random clocks in the question
     private String[] generateQuestionTwo() {
         //String array holds the times to be used in the question
         String[] timeInNumbers = {"1:00", "2:00", "2:10", "2:30", "3:50", "4:35", "5:20", "6:00",
