@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class KiPractice5 extends Assessment {
+public class KiPractice5  {
     public static void main (String[] args) {
         //Test question one
         KiPractice5 test1 = new KiPractice5();
