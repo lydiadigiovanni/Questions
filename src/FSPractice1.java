@@ -93,7 +93,7 @@ public class FSPractice1 extends Assessment {
         else { //Invalid question. Sum is greater than first number
             //Switch sum and first number in EVERYTHING
             answer = sum - firstNumber;  //The answer is the sum - the first number now
-            questionTwo[0] = "What is " + sum + " - ? = " + firstNumber + "?"; //The question switched around
+            questionTwo[0] = "What is " + sum + " - ? = " + firstNumber + " ?"; //The question switched around
             questionTwo[1] = Integer.toString(answer); //The actual answer
             questionTwo[2] = Integer.toString(answer + 3); //First wrong answer
             questionTwo[3] = Integer.toString(answer - 1); //Second wrong answer
