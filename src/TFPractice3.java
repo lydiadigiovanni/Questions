@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 //Purpose: First round of practice questions for Fraction Lagoon
 import java.util.ArrayList;
 import java.util.Random;
