@@ -18,6 +18,14 @@ public class FSPractice1 extends Assessment {
                 multipleChoice[0] = new String[] { "1" };
                 multipleChoice[1] = generateQuestionTwo();
                 break;
+            case 2:
+                multipleChoice[0] = new String[] { "2" };
+                multipleChoice[1] = generateQuestionThree();
+                break;    
+            case 3:
+                multipleChoice[0] = new String[] { "3" };
+                multipleChoice[1] = generateQuestionThree();
+                break;
         }
         return multipleChoice;
 
@@ -33,7 +41,9 @@ public class FSPractice1 extends Assessment {
     public String[][] generateUserInputQuestion() {
         // TODO Auto-generated method stub
         return null;
-    }
+        }
+        
+    
 
     public static void main(String[] args) {
         // Test question one
@@ -52,7 +62,7 @@ public class FSPractice1 extends Assessment {
         System.out.println(question2[2]);
         System.out.println(question2[3]);
         System.out.println(question2[4]);
-
+        //Test question three
         FSPractice1 test3 = new FSPractice1();
         String[] question3 = test3.generateQuestionThree();
         System.out.println(question3[0]);
@@ -60,7 +70,7 @@ public class FSPractice1 extends Assessment {
         System.out.println(question3[2]);
         System.out.println(question3[3]);
         System.out.println(question3[4]);
-
+        //Test question four
         FSPractice1 test4 = new FSPractice1();
         String[] question4 = test4.generateQuestionFour();
         System.out.println(question4[0]);
@@ -158,10 +168,10 @@ public class FSPractice1 extends Assessment {
         int answer = firstNumber + secondNumber; //Answer is basic addition
         questionFour[0] = "You have " + firstNumber + " " + randomFruit + " and your friend gives you "
         + secondNumber + " more. How many " + randomFruit + " do you have now?"; //The question
-        questionFour[1] = Integer.toString(answer) + " " + randomFruit; //The answer;
-        questionFour[2] = Integer.toString(answer + 2) + " " + randomFruit; //First wrong answer
-        questionFour[3] = Integer.toString(answer - 1) + " " + randomFruit; //Second wrong answer
-        questionFour[4] = Integer.toString(answer + 1) + " " + randomFruit; //Third wrong answer
+        questionFour[1] = Integer.toString(answer) ; //The answer;
+        questionFour[2] = Integer.toString(answer + 2) ; //First wrong answer
+        questionFour[3] = Integer.toString(answer - 1) ; //Second wrong answer
+        questionFour[4] = Integer.toString(answer + 1) ; //Third wrong answer
 
         return questionFour;
         

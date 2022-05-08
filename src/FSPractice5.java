@@ -15,7 +15,7 @@ public class FSPractice5 extends Assessment {
                 break;
             case 1:
                 multipleChoice[0] = new String[] { "1" };
-                multipleChoice[1] = generateQuestionTwo();
+                multipleChoice[1] = generateQuestionThree();
                 break;
         }
         return multipleChoice;
@@ -28,9 +28,25 @@ public class FSPractice5 extends Assessment {
     }
 
     @Override
-    public String[][] generateUserInputQuestion() {
-        // TODO Auto-generated method stub
-        return null;
+    public String[][] generateUserInputQuestion() {//question two needs pics uploaded
+        String[][] userInput = new String[2][1];
+        int i = ThreadLocalRandom.current().nextInt(4);
+        switch (i) {
+            case 0:
+                userInput[0] = new String[] { "0" };
+                userInput[1] = generateQuestionOne();
+                break;
+            case 1:
+                userInput[0] = new String[] { "1" };
+                userInput[1] = generateQuestionTwo();
+                break;
+            case 2:
+                userInput[0] = new String[] { "2" };
+                userInput[1] = generateQuestionThree();
+                break;
+        }
+        return userInput;
+        
     }
 
     public static void main(String[] args) {

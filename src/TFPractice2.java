@@ -9,8 +9,24 @@ public class TFPractice2 extends Assessment {
 
     @Override
     public String[][] generateMultipleChoiceQuestion() {
-        // TODO Auto-generated method stub
-        return null;
+        String[][] multipleChoice = new String[2][1];
+        int i = ThreadLocalRandom.current().nextInt(4);
+        switch (i) {
+            case 0:
+                multipleChoice[0] = new String[]{"0"};
+                multipleChoice[1] = generateQuestionOne();
+                break;
+            case 1: 
+                multipleChoice[0] = new String[]{"1"};
+                multipleChoice[1] = generateQuestionTwo();
+                break;
+            case 2: 
+                multipleChoice[0] = new String[]{"2"};
+                multipleChoice[1] = generateQuestionThree();
+                break;
+            
+        }
+        return multipleChoice;
     }
 
     @Override

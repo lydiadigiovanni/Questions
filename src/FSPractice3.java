@@ -19,6 +19,11 @@ public class FSPractice3 extends Assessment {
                 multipleChoice[0] = new String[] { "1" };
                 multipleChoice[1] = generateQuestionTwo();
                 break;
+            case 2:
+                multipleChoice[0] = new String[] { "2" };
+                multipleChoice[1] = generateQuestionThree();
+                break;
+
         }
         return multipleChoice;
     }

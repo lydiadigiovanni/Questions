@@ -11,7 +11,7 @@ public abstract class Assessment {
     public String[][][] generateQuestion() { 
         int i = ThreadLocalRandom.current().nextInt(3);
         String[][][] typeAndQuestion = new String[2][1][1];
-        switch (0) {
+        switch (i) {
             case 0:
                 typeAndQuestion[0][0] = new String[]{"0"};
                 typeAndQuestion[1] = generateMultipleChoiceQuestion();
