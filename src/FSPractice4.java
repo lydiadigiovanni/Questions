@@ -1,5 +1,6 @@
 //Purpose: Second round of practice questions for Time & Money Shore (TIME RELATED QUESTIONS)
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class FSPractice4 extends Assessment {
@@ -50,6 +51,14 @@ public class FSPractice4 extends Assessment {
                 System.out.println(question2[2]); 
                 System.out.println(question2[3]); 
                 System.out.println(question2[4]);
+                 // test question three
+                FSPractice4 test3 = new FSPractice4();
+                String[] question3 = test3.generateQuestionThree();
+                System.out.println(question3[0]);
+                System.out.println(question3[1]);
+                System.out.println(question3[2]);
+                System.out.println(question3[3]);
+                System.out.println(question3[4]);
     }
 
     //What time does the clock show? Picture of random clock next to question
@@ -457,6 +466,32 @@ public class FSPractice4 extends Assessment {
         return questionTwo;
     }
 
+        // Question Three:
+        private String[] generateQuestionThree() {
+            Random random = new Random(); // Will be used to generate the random numbers
+            int num = random.nextInt(6) + 1; // The number in the question is between 1 and 100
+            int num2 = random.nextInt(5) + 1;
+            int num3 = random.nextInt(12) + 1;
+            int num4 = random.nextInt(12) + 1;
     
+            ArrayList<Integer> intArray = new ArrayList<>(); // ArrayList will holds possible answers / factors
+            // inserting random int values in arrayList
+            intArray.add(num);
+            intArray.add(num2);
+            intArray.add(num3);
+            intArray.add(num4);
     
-}
+            String[] questionThree = new String[6]; // Array will hold question & possible answers
+            questionThree[0] = "All students left the school at "+ num+" o'clock. The vice "+
+            "principal stayed for "+num2+" more hours. When did the vice-principal leave the school?";
+            // Actual question
+    
+           
+            questionThree[1] = (num+num2) + ""; // Answer
+            questionThree[2] = num2 + ""; // Wrong answer
+            questionThree[3] = num3 + ""; // Wrong answer
+            questionThree[4] = num4 + ""; // Wrong answer
+    
+            return questionThree;
+    
+}}

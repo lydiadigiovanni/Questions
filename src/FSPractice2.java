@@ -1,4 +1,6 @@
+
 //Purpose: Second round of practice questions for Operation Beach
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,11 +12,11 @@ public class FSPractice2 extends Assessment {
         int i = ThreadLocalRandom.current().nextInt(4);
         switch (i) {
             case 0:
-                multipleChoice[0] = new String[]{"0"};
+                multipleChoice[0] = new String[] { "0" };
                 multipleChoice[1] = generateQuestionOne();
                 break;
-            case 1: 
-                multipleChoice[0] = new String[]{"1"};
+            case 1:
+                multipleChoice[0] = new String[] { "1" };
                 multipleChoice[1] = generateQuestionTwo();
                 break;
         }
@@ -32,49 +34,56 @@ public class FSPractice2 extends Assessment {
         // TODO Auto-generated method stub
         return null;
     }
+
     public static void main(String[] args) {
-        //Test question one
+        // Test question one
         FSPractice2 test1 = new FSPractice2();
         String[] question1 = test1.generateQuestionOne();
         System.out.println(question1[0]);
-        System.out.println(question1[1]); 
-        System.out.println(question1[2]); 
-        System.out.println(question1[3]); 
-        System.out.println(question1[4]); 
-        //Test question two
+        System.out.println(question1[1]);
+        System.out.println(question1[2]);
+        System.out.println(question1[3]);
+        System.out.println(question1[4]);
+        // Test question two
         FSPractice2 test2 = new FSPractice2();
         String[] question2 = test2.generateQuestionTwo();
         System.out.println(question2[0]);
-        System.out.println(question2[1]); 
-        System.out.println(question2[2]); 
-        System.out.println(question2[3]); 
-        System.out.println(question2[4]); 
+        System.out.println(question2[1]);
+        System.out.println(question2[2]);
+        System.out.println(question2[3]);
+        System.out.println(question2[4]);
+        //test question three
+        FSPractice2 test3 = new FSPractice2();
+        String[] question3 = test3.generateQuestionThree();
+        System.out.println(question3[0]);
+        System.out.println(question3[1]);
+        System.out.println(question3[2]);
+        System.out.println(question3[3]);
+        
     }
-    
-    //Question One: What is " " - " "?
+
+    // Question One: What is " " - " "?
     private String[] generateQuestionOne() {
-        String[] questionOne = new String[6]; //Array will contain question and possible answers
-        Random randomGenerator = new Random(); //Create random number generator
-        int firstNumber = randomGenerator.nextInt(100) + 1; //Generate random number between 1 and 100
-        int secondNumber = randomGenerator.nextInt(100) + 1;  //Generate random number between 1 and 100
+        String[] questionOne = new String[6]; // Array will contain question and possible answers
+        Random randomGenerator = new Random(); // Create random number generator
+        int firstNumber = randomGenerator.nextInt(100) + 1; // Generate random number between 1 and 100
+        int secondNumber = randomGenerator.nextInt(100) + 1; // Generate random number between 1 and 100
         int answer = firstNumber - secondNumber;
 
-        if (firstNumber > secondNumber) { //The first number needs to be the greater one
-            questionOne[0] = "What is " + firstNumber + " - " + secondNumber + "?"; //The actual question
-            questionOne[1] = Integer.toString(answer); //The answer;
-            questionOne[2] = Integer.toString(answer + 3); //First wrong answer
-            questionOne[3] = Integer.toString(answer - 1); //Second wrong answer
-            questionOne[4] = Integer.toString(answer + 1); //Third wrong answer
-        }
-        else { //Second number is greater than the first. Switch them!
-            //Switch the places of firstNumber and secondNumber in EVERYTHING
-            answer = secondNumber - firstNumber; //The answer is the second minus the first number now
-            questionOne[0] = "What is " + secondNumber + " - " + firstNumber + "?"; //The actual question
-            questionOne[1] = Integer.toString(answer); //The answer;
-            questionOne[2] = Integer.toString(answer + 3); //First wrong answer
-            questionOne[3] = Integer.toString(answer - 1); //Second wrong answer
-            questionOne[4] = Integer.toString(answer + 1); //Third wrong answer
-            
+        if (firstNumber > secondNumber) { // The first number needs to be the greater one
+            questionOne[0] = "What is " + firstNumber + " - " + secondNumber + "?"; // The actual question
+            questionOne[1] = Integer.toString(answer); // The answer;
+            questionOne[2] = Integer.toString(answer + 3); // First wrong answer
+            questionOne[3] = Integer.toString(answer - 1); // Second wrong answer
+            questionOne[4] = Integer.toString(answer + 1); // Third wrong answer
+        } else { // Second number is greater than the first. Switch them!
+                 // Switch the places of firstNumber and secondNumber in EVERYTHING
+            answer = secondNumber - firstNumber; // The answer is the second minus the first number now
+            questionOne[0] = "What is " + secondNumber + " - " + firstNumber + "?"; // The actual question
+            questionOne[1] = Integer.toString(answer); // The answer;
+            questionOne[2] = Integer.toString(answer + 3); // First wrong answer
+            questionOne[3] = Integer.toString(answer - 1); // Second wrong answer
+            questionOne[4] = Integer.toString(answer + 1); // Third wrong answer
 
         }
 
@@ -82,35 +91,75 @@ public class FSPractice2 extends Assessment {
 
     }
 
-    //Question Two: What is "random number" + ? = "random number"?
+    // Question Two: What is "random number" + ? = "random number"?
     private String[] generateQuestionTwo() {
-        String[] questionTwo = new String[6]; //Array will contain question and possible answers
-        Random randomGenerator = new Random(); //Create random number generator
-        //Create random number between 1 and 99 since the sum can't be > 100
-        int firstNumber = randomGenerator.nextInt(99) + 1; 
-        int sum = randomGenerator.nextInt(100) + 1; //Create random number between 1 and 100
-        int answer = sum - firstNumber; //Answer is sum - firstNumber in most cases
+        String[] questionTwo = new String[6]; // Array will contain question and possible answers
+        Random randomGenerator = new Random(); // Create random number generator
+        // Create random number between 1 and 99 since the sum can't be > 100
+        int firstNumber = randomGenerator.nextInt(99) + 1;
+        int sum = randomGenerator.nextInt(100) + 1; // Create random number between 1 and 100
+        int answer = sum - firstNumber; // Answer is sum - firstNumber in most cases
 
-        if (sum > firstNumber) { //The sum is supposed to be the higher number
-            questionTwo[0] = "What is " + firstNumber + " + ? = " + sum + "?"; //The actual question
-            questionTwo[1] = Integer.toString(answer); //The answer
-            questionTwo[2] = Integer.toString(answer + 3); //First wrong answer
-            questionTwo[3] = Integer.toString(answer - 1); //Second wrong answer
-            questionTwo[4] = Integer.toString(answer + 1); //Third wrong answer
-        }
-        else { //The first number was greater than the sum. Switch them!
-            //Switch the first number and sum in EVERYTHING
-            answer = firstNumber - sum; //The answer is now the first number - the sum
-            questionTwo[0] = "What is " + sum + " + ? = " + firstNumber+ "?"; //Actual question switched around
-            questionTwo[1] = Integer.toString(answer); //The answer
-            questionTwo[2] = Integer.toString(answer + 3); //First wrong answer
-            questionTwo[3] = Integer.toString(answer - 1); //Second wrong answer
-            questionTwo[4] = Integer.toString(answer + 1); //Third wrong answer
+        if (sum > firstNumber) { // The sum is supposed to be the higher number
+            questionTwo[0] = "What is " + firstNumber + " + ? = " + sum + "?"; // The actual question
+            questionTwo[1] = Integer.toString(answer); // The answer
+            questionTwo[2] = Integer.toString(answer + 3); // First wrong answer
+            questionTwo[3] = Integer.toString(answer - 1); // Second wrong answer
+            questionTwo[4] = Integer.toString(answer + 1); // Third wrong answer
+        } else { // The first number was greater than the sum. Switch them!
+                 // Switch the first number and sum in EVERYTHING
+            answer = firstNumber - sum; // The answer is now the first number - the sum
+            questionTwo[0] = "What is " + sum + " + ________ = " + firstNumber + "?"; // Actual question switched around
+            questionTwo[1] = Integer.toString(answer); // The answer
+            questionTwo[2] = Integer.toString(answer + 3); // First wrong answer
+            questionTwo[3] = Integer.toString(answer - 1); // Second wrong answer
+            questionTwo[4] = Integer.toString(answer + 1); // Third wrong answer
 
         }
 
         return questionTwo;
-        
-    }
-}
 
+    }
+
+     // Question Three:Compare the numbers. Add: > or < or =
+     private String[] generateQuestionThree() {
+        Random random = new Random(); // Will be used to generate the random numbers
+
+        int num = random.nextInt(100) + 1; // The number in the question is between 1 and 100
+        int num2 = random.nextInt(100) + 1;
+
+        String[] questionThree = new String[6]; // Array will hold question & possible answers
+        questionThree[0] = "Compare the numbers. Add: > or < or =\n"+
+        +num+"______"+num2; // Actual question
+
+        
+       if(num == num2){
+            questionThree[1] = "="; // Answer
+            questionThree[2] = ">"; // Wrong answer
+            questionThree[3] = "<" ; // Wrong answer
+       }
+       if(num < num2){
+        questionThree[1] = "<"; // Answer
+        questionThree[2] = "="; // Wrong answer
+        questionThree[3] = ">" ; // Wrong answer
+
+       }
+       if(num>num2){
+        questionThree[1] = ">"; // Answer
+        questionThree[2] = "="; // Wrong answer
+        questionThree[3] = "<" ; // Wrong answer
+
+       }
+        
+
+    
+        
+               
+ 
+        return questionThree;
+ 
+
+    }
+
+
+}
