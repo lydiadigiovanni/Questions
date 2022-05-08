@@ -61,6 +61,14 @@ public class FSPractice1 extends Assessment {
         System.out.println(question3[3]);
         System.out.println(question3[4]);
 
+        FSPractice1 test4 = new FSPractice1();
+        String[] question4 = test4.generateQuestionFour();
+        System.out.println(question4[0]);
+        System.out.println(question4[1]);
+        System.out.println(question4[2]);
+        System.out.println(question4[3]);
+        System.out.println(question4[4]);
+
     }
 
     // Question One: What is " " + " "?
