@@ -138,4 +138,24 @@ public class FSPractice1 extends Assessment {
         return questionThree;
 
     }
+
+    //Question Three: You have " " apples and your friend gives you " " more. How many apples do you have now?
+    private String[] generateQuestionFour() {
+        String[] questionFour = new String[6]; //Array will contain question and possible answers
+        String[] fruits = {"apples", "bananas", "oranges", "pineapples"}; //Array of fruits
+        String randomFruit = fruits[ThreadLocalRandom.current().nextInt(4)]; //Fruit to use in the question/answer
+        Random randomGenerator = new Random(); //Create random number generator
+        int firstNumber = randomGenerator.nextInt(100) + 1; //Generate random number between 1 and 100
+        int secondNumber = randomGenerator.nextInt(100) + 1;  //Generate random number between 1 and 100
+        int answer = firstNumber + secondNumber; //Answer is basic addition
+        questionFour[0] = "You have " + firstNumber + " " + randomFruit + " and your friend gives you "
+        + secondNumber + " more. How many " + randomFruit + " do you have now?"; //The question
+        questionFour[1] = Integer.toString(answer) + " " + randomFruit; //The answer;
+        questionFour[2] = Integer.toString(answer + 2) + " " + randomFruit; //First wrong answer
+        questionFour[3] = Integer.toString(answer - 1) + " " + randomFruit; //Second wrong answer
+        questionFour[4] = Integer.toString(answer + 1) + " " + randomFruit; //Third wrong answer
+
+        return questionFour;
+        
+    }
 }
