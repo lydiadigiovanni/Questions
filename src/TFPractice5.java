@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -38,7 +39,15 @@ public static void main(String[] args) {
      System.out.println(question2[2]); 
      System.out.println(question2[3]); 
      System.out.println(question2[4]);
-    
+       //test question three
+    TFPractice5 test3 = new TFPractice5();
+    String[] question3 = test3.generateQuestionThree();
+    System.out.println(question3[0]);
+    System.out.println(question3[1]);
+    System.out.println(question3[2]);
+    System.out.println(question3[3]);
+    System.out.println(question3[4]);
+
 }    //Solve for y in " " = " " + " "y
 private String[] generateQuestionOne() {
     Random random = new Random(); //Will be used to generate random number
@@ -85,5 +94,31 @@ private String[] generateQuestionTwo() {
     return questionTwo;
 
 }
+     // Question Three:if x = ###, find the value of ##x-x##.
+     private String[] generateQuestionThree() {
+        Random random = new Random(); // Will be used to generate the random numbers
+        int num = random.nextInt(12) + 1; // The number in the question is between 1 and 100
+        int num2 = random.nextInt(12) + 1;
+        int num3 = random.nextInt(12) + 1;
+        int num4 = random.nextInt(12) + 1;
+
+
+        ArrayList<Integer> intArray = new ArrayList<>(); // ArrayList will holds possible answers / factors
+        // inserting random int values in arrayList
+        intArray.add(num);
+        intArray.add(num2);
+        intArray.add(num3);
+        intArray.add(num4);
+ 
+        String[] questionThree = new String[6]; // Array will hold question & possible answers
+        questionThree[0] = "if x = " + num + ", find the value of " + num2 + "x " +"- "+ num3 + "."; // Actual question
+        questionThree[1] = (num*num2)-num3+""; // Answer
+        questionThree[2] = (num*num3)-num2+""; // Wrong answer
+        questionThree[3] = (num2*num)-num+""; // Wrong answer
+        questionThree[4] = (num3*num2)-num2+""; // Wrong answer
+ 
+        return questionThree;
+ 
+    }
 }
 
