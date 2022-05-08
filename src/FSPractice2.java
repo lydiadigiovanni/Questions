@@ -48,18 +48,28 @@ public class FSPractice2 extends Assessment {
         FSPractice2 test2 = new FSPractice2();
         String[] question2 = test2.generateQuestionTwo();
         System.out.println(question2[0]);
+
         System.out.println(question2[1]);
         System.out.println(question2[2]);
         System.out.println(question2[3]);
         System.out.println(question2[4]);
-        //test question three
+        // test question three
         FSPractice2 test3 = new FSPractice2();
         String[] question3 = test3.generateQuestionThree();
         System.out.println(question3[0]);
         System.out.println(question3[1]);
         System.out.println(question3[2]);
         System.out.println(question3[3]);
-        
+
+        // Test question four
+        FSPractice2 test4 = new FSPractice2();
+        String[] question4 = test4.generateQuestionFour();
+        System.out.println(question4[0]);
+        System.out.println(question4[1]);
+        System.out.println(question4[2]);
+        System.out.println(question4[3]);
+        System.out.println(question4[4]);
+
     }
 
     // Question One: What is " " - " "?
@@ -121,45 +131,71 @@ public class FSPractice2 extends Assessment {
 
     }
 
-     // Question Three:Compare the numbers. Add: > or < or =
-     private String[] generateQuestionThree() {
+    // Question Three:Compare the numbers. Add: > or < or =
+    private String[] generateQuestionThree() {
         Random random = new Random(); // Will be used to generate the random numbers
 
         int num = random.nextInt(100) + 1; // The number in the question is between 1 and 100
         int num2 = random.nextInt(100) + 1;
 
         String[] questionThree = new String[6]; // Array will hold question & possible answers
-        questionThree[0] = "Compare the numbers. Add: > or < or =\n"+
-        +num+"______"+num2; // Actual question
+        questionThree[0] = "Compare the numbers. Add: > or < or =\n" +
+                +num + "______" + num2; // Actual question
 
-        
-       if(num == num2){
+        if (num == num2) {
             questionThree[1] = "="; // Answer
             questionThree[2] = ">"; // Wrong answer
-            questionThree[3] = "<" ; // Wrong answer
-       }
-       if(num < num2){
-        questionThree[1] = "<"; // Answer
-        questionThree[2] = "="; // Wrong answer
-        questionThree[3] = ">" ; // Wrong answer
+            questionThree[3] = "<"; // Wrong answer
+        }
+        if (num < num2) {
+            questionThree[1] = "<"; // Answer
+            questionThree[2] = "="; // Wrong answer
+            questionThree[3] = ">"; // Wrong answer
 
-       }
-       if(num>num2){
-        questionThree[1] = ">"; // Answer
-        questionThree[2] = "="; // Wrong answer
-        questionThree[3] = "<" ; // Wrong answer
+        }
+        if (num > num2) {
+            questionThree[1] = ">"; // Answer
+            questionThree[2] = "="; // Wrong answer
+            questionThree[3] = "<"; // Wrong answer
 
-       }
-        
+        }
 
-    
-        
-               
- 
         return questionThree;
- 
 
     }
 
+    // Question Three: You had " " apples and you give your friend " ". How many
+    // apples do you after left?
+    private String[] generateQuestionFour() {
+        String[] questionFour = new String[6]; // Array will contain question and possible answers
+        String[] fruits = { "apples", "bananas", "oranges", "pineapples" }; // Array of fruits
+        String randomFruit = fruits[ThreadLocalRandom.current().nextInt(4)]; // Fruit to use in the question/answer
+        Random randomGenerator = new Random(); // Create random number generator
+        int firstNumber = randomGenerator.nextInt(100) + 1; // Generate random number between 1 and 100
+        int secondNumber = randomGenerator.nextInt(100) + 1; // Generate random number between 1 and 100
+        int answer = firstNumber - secondNumber; // Answer is basic subtraction
+
+        if (firstNumber > secondNumber) { // The first number needs to be the greater one
+            questionFour[0] = "You had " + firstNumber + " " + randomFruit + " and you give your friend " + secondNumber
+                    + ". How many " + randomFruit + " do you have left?"; // The question
+            questionFour[1] = Integer.toString(answer) + " " + randomFruit; // The answer;
+            questionFour[2] = Integer.toString(answer + 2) + " " + randomFruit; // First wrong answer
+            questionFour[3] = Integer.toString(answer - 1) + " " + randomFruit; // Second wrong answer
+            questionFour[4] = Integer.toString(answer + 1) + " " + randomFruit; // Third wrong answer
+        } else { // Second number is greater than the first. Switch them!
+                 // Switch the places of firstNumber and secondNumber in EVERYTHING
+            answer = secondNumber - firstNumber; // The answer is the second minus the first number now
+            questionFour[0] = "You had " + secondNumber + " " + randomFruit + " and you give your friend " + firstNumber
+                    + ". How many " + randomFruit + " do you have left?"; // The question switched around
+            questionFour[1] = Integer.toString(answer) + " " + randomFruit; // The answer;
+            questionFour[2] = Integer.toString(answer + 2) + " " + randomFruit; // First wrong answer
+            questionFour[3] = Integer.toString(answer - 1) + " " + randomFruit; // Second wrong answer
+            questionFour[4] = Integer.toString(answer + 1) + " " + randomFruit; // Third wrong answer
+
+        }
+
+        return questionFour;
+
+    }
 
 }
